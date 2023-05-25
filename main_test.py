@@ -2,7 +2,7 @@ import random
 import main
 
 
-def test_main():
+def test_main_1():
     numbers = [3, 2, 0, 5, 4]
     # print (id(numbers))
     print('Test data', numbers)
@@ -15,6 +15,8 @@ def test_main():
     assert numbers[3] > 3
     assert numbers[4] > 3
 
+
+def test_main_2():
     numbers = [random.randint(0, 20) for i in range(10)]
     print('Test data', numbers)
     pivot = numbers[0]
@@ -29,7 +31,7 @@ def test_main():
         except:
             print('Value error: Not found the pivot element')
             assert False
-        start = pivotidx+1
+        start = pivotidx + 1
     print('pivot idx', pivotidx)
 
     print('After split()', numbers)
@@ -38,7 +40,7 @@ def test_main():
     for i in range(pivotidx):
         assert numbers[i] <= pivot
 
-    for i in range(pivotidx+1, len(numbers)):
+    for i in range(pivotidx + 1, len(numbers)):
         assert numbers[i] > pivot
 
 # assert v1 == -10, "Min value does not match"
