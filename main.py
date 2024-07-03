@@ -2,14 +2,24 @@ import random
 
 
 def split(numbers):
-    """
-    ########################################
-    Code Your Program here
-    ########################################
-    """
+    #initializing variables and pivot point
+    lessThan = []
+    greaterThan = []
+    pivot = numbers[0]
+    del numbers[0]
+    
+    #loop through remainder of list
+    while numbers:
+        #sort values into respective lists
+        if numbers[0] < pivot:
+            lessThan.append(numbers[0])
+        else:
+            greaterThan.append(numbers[0])
+        del numbers[0]
+    else:
+        #update numbers
+        numbers = lessThan + pivot + greaterThan
 
-    #################
-    # Do not delete return statement
     return numbers
 
 
