@@ -11,14 +11,16 @@ def split(numbers):
     #loop through remainder of list
     while numbers:
         #sort values into respective lists
-        if numbers[0] < pivot:
+        if numbers[0] <= pivot:
             lessThan.append(numbers[0])
         else:
             greaterThan.append(numbers[0])
         del numbers[0]
-    else:
-        #update numbers
-        numbers = lessThan + pivot + greaterThan
+    
+    #update numbers
+    numbers.extend(lessThan)
+    numbers.append(pivot)
+    numbers.extend(greaterThan)
 
     return numbers
 
